@@ -1,0 +1,31 @@
+{
+  "name": "everbot-work-allocation",
+  "version": "1.0.0",
+  "description": "EverBot Solutions - Automated Robot Work Allocation System",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsx src/cli/index.ts",
+    "start:dist": "node dist/cli/index.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "robot-allocation",
+    "optimization",
+    "typescript",
+    "clean-architecture",
+    "tdd"
+  ],
+  "author": "Kenny Soon",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "tsx": "^4.10.5",
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
+  }
+}
