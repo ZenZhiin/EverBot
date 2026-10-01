@@ -60,19 +60,19 @@ export class MultiClientAllocator {
   public parseClientInputs(input: string): ClientRequest[] {
     const trimmed = input.trim();
     if (!trimmed) {
-      throw new InvalidInputError('Work hours must be a positive integer.');
+      throw new InvalidInputError('Error: Work hours must be a positive integer.');
     }
 
     const tokens = trimmed.split(/[\s,]+/).filter((t) => t.length > 0);
     if (tokens.length === 0) {
-      throw new InvalidInputError('Work hours must be a positive integer.');
+      throw new InvalidInputError('Error: Work hours must be a positive integer.');
     }
 
     const requests: ClientRequest[] = [];
     tokens.forEach((token, index) => {
       const num = Number(token);
       if (!Number.isInteger(num) || num <= 0) {
-        throw new InvalidInputError('Work hours must be a positive integer.');
+        throw new InvalidInputError('Error: Work hours must be a positive integer.');
       }
       requests.push({
         clientId: `Client ${index + 1}`,

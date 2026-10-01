@@ -43,7 +43,13 @@ Options:
     const bravo = Number(parseArgValue(args, '--bravo') ?? '0');
     const charlie = Number(parseArgValue(args, '--charlie') ?? '0');
     const delta = Number(parseArgValue(args, '--delta') ?? '0');
-    const mode = (parseArgValue(args, '--mode') as CliOptions['mode']) ?? 'all';
+    const modeArg = parseArgValue(args, '--mode');
+    const validModes: CliOptions['mode'][] = ['level1', 'level2', 'compare', 'standby', 'multi', 'all'];
+    if (modeArg && !validModes.includes(modeArg as CliOptions['mode'])) {
+      console.error(`Error: Unknown mode "${modeArg}". Valid modes: ${validModes.join(', ')}`);
+      process.exit(1);
+    }
+    const mode = (modeArg as CliOptions['mode']) ?? 'all';
 
     const output = runAllocationCli({
       bravo,

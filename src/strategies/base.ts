@@ -19,7 +19,7 @@ export abstract class BaseAllocationStrategy implements AllocationStrategy {
 
   protected validateInputs(inventory: Inventory, clientHours: number): void {
     if (!Number.isInteger(clientHours) || clientHours <= 0) {
-      throw new InvalidInputError('Work hours must be a positive integer.');
+      throw new InvalidInputError('Error: Work hours must be a positive integer.');
     }
 
     if (inventory.totalCount() === 0) {

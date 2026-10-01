@@ -11,9 +11,8 @@ export class EverBotError extends Error {
 }
 
 export class InvalidInputError extends EverBotError {
-  constructor(message: string = 'Work hours must be a positive integer.') {
-    const formatted = message.startsWith('Error: ') ? message : `Error: ${message}`;
-    super(formatted);
+  constructor(message: string = 'Error: Work hours must be a positive integer.') {
+    super(message);
   }
 }
 

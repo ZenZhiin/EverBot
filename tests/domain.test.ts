@@ -111,7 +111,7 @@ describe('Domain Exceptions', () => {
     expect(new InsufficientCapacityError().message).toBe(
       'Error: Insufficient robot capacity to complete the requested work.',
     );
-    expect(new InvalidInputError('Work hours must be a positive integer.').message).toBe(
+    expect(new InvalidInputError().message).toBe(
       'Error: Work hours must be a positive integer.',
     );
   });

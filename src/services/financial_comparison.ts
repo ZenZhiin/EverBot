@@ -38,7 +38,7 @@ export class FinancialComparisonService {
       `Level 1 Cost: $${report.level1Cost}`,
       `Level 2 Cost: $${report.level2Cost}`,
       '',
-      `Cost Difference: $${report.costDifference}`,
+      `Cost Difference: $${Math.abs(report.costDifference)}`,
       '',
       'Insight:',
       report.insight,
